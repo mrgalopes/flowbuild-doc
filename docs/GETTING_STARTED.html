@@ -147,28 +147,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Then, we must install our workflow engine as a dependency</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">npm</span> install @flowbuild/engine</a></code></pre></div>
 <p>The basic anatomy of a workflow project is:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="co">/* 0. Dependencies import */</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">const</span> readlineSync <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;readline-sync&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">const</span> lisp <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;../src/core/lisp&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="kw">const</span> settings <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;../settings/settings&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="kw">const</span> <span class="op">{</span> Engine <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;../src/engine/engine&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb10-6" title="6"></a>
-<a class="sourceLine" id="cb10-7" title="7"><span class="co">/* 1. Declaration of the blueprint */</span></a>
-<a class="sourceLine" id="cb10-8" title="8"><span class="kw">const</span> blueprint_spec <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb10-9" title="9"></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="co">/* 2. Declaration of the actors of the workflow */</span></a>
-<a class="sourceLine" id="cb10-11" title="11"><span class="kw">const</span> actor_data <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb10-12" title="12">    <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;1&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb10-13" title="13">    <span class="dt">claims</span><span class="op">:</span> []</a>
-<a class="sourceLine" id="cb10-14" title="14"><span class="op">};</span></a>
-<a class="sourceLine" id="cb10-15" title="15"></a>
-<a class="sourceLine" id="cb10-16" title="16"><span class="co">/* 3. Declaration of async func to run the workflow */</span></a>
-<a class="sourceLine" id="cb10-17" title="17"><span class="kw">const</span> run_example <span class="op">=</span> <span class="kw">async</span>() <span class="kw">=&gt;</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb10-18" title="18"></a>
-<a class="sourceLine" id="cb10-19" title="19"><span class="co">/* 4. Run the function */</span></a>
-<a class="sourceLine" id="cb10-20" title="20"><span class="at">run_example</span>()</a>
-<a class="sourceLine" id="cb10-21" title="21">    .<span class="at">then</span>( resp <span class="kw">=&gt;</span> <span class="op">{</span><span class="va">console</span>.<span class="at">log</span>(resp)<span class="op">}</span>) <span class="co">/* Show the result */</span></a>
-<a class="sourceLine" id="cb10-22" title="22">    .<span class="at">catch</span>( err <span class="kw">=&gt;</span> <span class="op">{</span><span class="va">console</span>.<span class="at">log</span>(err)<span class="op">}</span>)  <span class="co">/* Catch any errors */</span></a></code></pre></div>
+<!-- ```js
+/* 0. Dependencies import */
+const readlineSync = require("readline-sync");
+const lisp = require("../src/core/lisp");
+const settings = require("../settings/settings");
+const { Engine } = require("../src/engine/engine");
+
+/* 1. Declaration of the blueprint */
+const blueprint_spec = {};
+
+/* 2. Declaration of the actors of the workflow */
+const actor_data = {
+    id: "1",
+    claims: []
+};
+
+/* 3. Declaration of async func to run the workflow */
+const run_example = async() => {};
+
+/* 4. Run the function */
+run_example()
+    .then( resp => {console.log(resp)}) /* Show the result */
+    .catch( err => {console.log(err)})  /* Catch any errors */
+
+``` -->
+<script src="http://gist-it.appspot.com/https://github.com/mrgalopes/flowbuild-doc/blob/master/examples/anatomy_workflow.js">
+</script>
 <h2 id="sharpen-your-skills">Sharpen your skills</h2>
 <p>You can find several exemples of different workflows under the ./examples folder in the repo (TODO: Explicar os exemplos disponíveis)</p>
 <h2 id="join-the-community">Join the community</h2>
