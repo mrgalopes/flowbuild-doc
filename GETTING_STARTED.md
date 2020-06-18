@@ -96,6 +96,15 @@ Or download the installer from the [official page](https://git-scm.com/downloads
 
 ### Run the tests
 
+To check if the library is working, you may run the unit tests.
+
+To setup the docker enviroment and run the tests, use the commands
+
+```sh
+docker-compose build
+docker-compose up
+```
+
 ## Write your first Workflow
 
 ## Sharpen your skills
