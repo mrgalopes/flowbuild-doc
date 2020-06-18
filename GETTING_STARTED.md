@@ -4,13 +4,20 @@
 
 This file structure is based on Django docs
 
-- Why Flowbuild? ([Why Django?](https://www.djangoproject.com/start/overview/))
-- Getting started ([Django start](https://www.djangoproject.com/start/overview/))
-- Install Flowbuild
-- Write your first Workflow
-- Sharpen your skills
-- Join the community
-- Intro to Django
+- [Sections](#sections)
+- [Why Flowbuild?](#why-flowbuild)
+- [Reproducible](#reproducible)
+- [Independent](#independent)
+- [Easy to explain and to reason about](#easy-to-explain-and-to-reason-about)
+- [Install Flowbuild (Quick Install Guide)](#install-flowbuild-quick-install-guide)
+  - [Install node](#install-node)
+  - [Setup Docker](#setup-docker)
+  - [Clone the repo](#clone-the-repo)
+  - [Run the tests](#run-the-tests)
+- [Write your first Workflow](#write-your-first-workflow)
+- [Sharpen your skills](#sharpen-your-skills)
+- [Join the community](#join-the-community)
+- [Intro to Workflow](#intro-to-workflow)
 
 ## Why Flowbuild?
 
