@@ -6,9 +6,9 @@ This file structure is based on Django docs
 
 - [Sections](#sections)
 - [Why Flowbuild?](#why-flowbuild)
-- [Reproducible](#reproducible)
-- [Independent](#independent)
-- [Easy to explain and to reason about](#easy-to-explain-and-to-reason-about)
+  - [Reproducible](#reproducible)
+  - [Independent](#independent)
+  - [Easy to explain and to reason about](#easy-to-explain-and-to-reason-about)
 - [Install Flowbuild (Quick Install Guide)](#install-flowbuild-quick-install-guide)
   - [Install node](#install-node)
   - [Setup Docker](#setup-docker)
@@ -21,15 +21,15 @@ This file structure is based on Django docs
 
 ## Why Flowbuild?
 
-## Reproducible
+### Reproducible
 
 Each workflow created is the same and can be deployed to any running server.
 
-## Independent
+### Independent
 
 Each process runs independently from each other.
 
-## Easy to explain and to reason about
+### Easy to explain and to reason about
 
 The workflows are based of BPMN (Business Process Model and Notation), which represents
 processes in a easy to follow manner. Furthermore, the business logic of the application
@@ -107,7 +107,56 @@ docker-compose up
 
 ## Write your first Workflow
 
+To start a new project with Workflow, you first need to create a new node project.
+
+Lets create a project named ```my-first-workflow```
+
+```sh
+mkdir my-first-workflow
+cd my-first-workflow
+
+npm init -y
+```
+
+A new file named ```package.json``` will be created inside the folder, showing that the folder contains a node module.
+
+Then, we must install our workflow engine as a dependency
+
+```sh
+npm install @flowbuild/engine
+```
+
+The basic anatomy of a workflow project is:
+
+```js
+/* 0. Dependencies import */
+const readlineSync = require("readline-sync");
+const lisp = require("../src/core/lisp");
+const settings = require("../settings/settings");
+const { Engine } = require("../src/engine/engine");
+
+/* 1. Declaration of the blueprint */
+const blueprint_spec = {};
+
+/* 2. Declaration of the actors of the workflow */
+const actor_data = {
+    id: "1",
+    claims: []
+};
+
+/* 3. Declaration of async func to run the workflow */
+const run_example = async() => {};
+
+/* 4. Run the function */
+run_example()
+    .then( resp => {console.log(resp)}) /* Show the result */
+    .catch( err => {console.log(err)})  /* Catch any errors */
+
+```
+
 ## Sharpen your skills
+
+You can find several exemples of different workflows under the ./examples folder in the repo (TODO: Explicar os exemplos disponíveis)
 
 ## Join the community
 
