@@ -1,40 +1,41 @@
-STATIC_PATH := ./static
-PAGES_PATH := $(STATIC_PATH)/pages/
-ASSETS_PATH := $(STATIC_PATH)/assets/
-IMAGES_PATH := ./imgs
-CSS_PATH := ./css
+## Simple pandoc makefile to export a collection of .md file to static site
+# To run a static server localy, set STATIC_SERVER var
+# The default is node-static, which can be installed with
+#
+# sudo npm install -g node-static
+#
 
-FOLDERS := $(STATIC_PATH) $(PAGES_PATH) $(ASSETS_PATH) $(IMAGES_PATH) $(CSS_PATH)
+STATIC_SERVER := static
 
+STATIC_PATH := ./docs/
+IMAGES_PATH := ./imgs/
+CSS_PATH := ./css/
+
+FOLDERS := $(STATIC_PATH) $(IMAGES_PATH) $(CSS_PATH)
 MD_FILES := $(shell find . -name "*.md")
-HTML_FILES = $(MD_FILES:.md=.html)
 
-# post.pdf: post.md fix-fig.tex
-	# pandoc ./post.md  -H fix-fig.tex -o post.pdf
-	# gio open post.pdf
+HTML_FILES := $(addprefix $(STATIC_PATH), $(MD_FILES:.md=.html))
+ASSETS := $(addprefix $(STATIC_PATH), $(IMAGES_PATH) $(CSS_PATH))
 
-all: $(HTML_FILES)
+all: $(HTML_FILES) start_server
 
-# $(STATIC_PATH)/$(IMAGES_PATH)
-%.html: %.md style.h.html | $(FOLDERS)
+deploy: $(HTML_FILES)
+
+start_server:
+	cp ./index.html $(STATIC_PATH)
+	$(STATIC_SERVER) $(STATIC_PATH) -p 8080
+
+$(STATIC_PATH)%.html: %.md style.h.html | $(FOLDERS) $(ASSETS)
 	pandoc $< -H style.h.html -o $@
 
-# cp ./post.html $(PAGES_PATH)
-# cp -r $(IMAGES_PATH) $(ASSETS_PATH)
-# cp -r $(CSS_PATH) $(ASSETS_PATH)
+$(ASSETS):
+	cp -r $(IMAGES_PATH) $(STATIC_PATH)
+	cp -r $(CSS_PATH) $(STATIC_PATH)
 
 .PHONY: post.pdf post.html
 
 clean:
-	rm -f post.html
-	rm -f post.pdf
+	rm -rf $(STATIC_PATH)
 
 $(FOLDERS):
 	mkdir -p $@
-
-clean_server:
-	rm -rf $(PAGES_PATH)
-	rm -rf $(ASSETS_PATH)
-
-# $(STATIC_PATH)/$(IMAGES_PATH):
-# 	mkdir -p $(STATIC_PATH)/$(IMAGES_PATH)
