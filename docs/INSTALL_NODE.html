@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>INSTALL_NODE</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="./css/modesto.css"/>
+  <link rel="stylesheet" href="./css/images.css"/>
+</head>
+<body>
+<h1 id="installation-methods-for-nodejs">Installation methods for NodeJS</h1>
+<h2 id="with-node-version-manager-recommended">With node version manager (recommended)</h2>
+<p>There are multiple ways to install node. On macOS and Linux, the recommended way is using <code>nvm</code> (node version manager). <a href="https://github.com/nvm-sh/nvm">Click here</a> for official page. On Windows, you can run <code>nvm</code> using WSL (Windows Subsystem for Linux) or natively with the unofficial <a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>.</p>
+<p>To install nvm, run the command below replacing the <NVM_VERSION> with the desired version of nvm. The newer, the better.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/<span class="op">&lt;</span>NVM_VERSION<span class="op">&gt;</span>/install.sh <span class="kw">|</span> <span class="fu">bash</span></a></code></pre></div>
+<p>By the time this document was written, the newer version of nvm was v0.35.3</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></a></code></pre></div>
+<p>To install the lastest LTS (Long Time Sevice) version, run the command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">nvm</span> install --lts</a></code></pre></div>
+<p>If you get an error <code>Command 'nvm' not found</code> try to close and reopen the terminal session.</p>
+<p>You can check your instalation with:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">node</span> -v</a></code></pre></div>
+<h2 id="with-package-manager-linux">With package manager (Linux)</h2>
+<p>You can find the repo of all node versions in the <a href="https://github.com/nodesource/distributions/blob/master/README.md">offical list</a>.</p>
+<p>To install node in a Debian/Ubuntu based system, run the command replacing <NODE_VERSION> with the desired node version</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Using Ubuntu</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="ex">curl</span> -sL https://deb.nodesource.com/setup_<span class="op">&lt;</span>NODE_VERSION<span class="op">&gt;</span>.x <span class="kw">|</span> <span class="fu">sudo</span> -E bash -</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="fu">sudo</span> apt-get install -y nodejs</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co"># Using Debian, as root</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="ex">curl</span> -sL https://deb.nodesource.com/setup_<span class="op">&lt;</span>NODE_VERSION<span class="op">&gt;</span>.x <span class="kw">|</span> <span class="fu">bash</span> -</a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="ex">apt-get</span> install -y nodejs</a></code></pre></div>
+<p>By the time this doc was written, the latest LTS version is v14</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Using Ubuntu</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="ex">curl</span> -sL https://deb.nodesource.com/setup_14.x <span class="kw">|</span> <span class="fu">sudo</span> -E bash -</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="fu">sudo</span> apt-get install -y nodejs</a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co"># Using Debian, as root</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="ex">curl</span> -sL https://deb.nodesource.com/setup_14.x <span class="kw">|</span> <span class="fu">bash</span> -</a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="ex">apt-get</span> install -y nodejs</a></code></pre></div>
+<p>For Red Hat Enterprise/Fedora based systems, the command is very similar</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># As root</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="ex">curl</span> -sL https://rpm.nodesource.com/setup_<span class="op">&lt;</span>NODE_VERSION<span class="op">&gt;</span>.x <span class="kw">|</span> <span class="fu">bash</span> -</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co"># No root privileges</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="ex">curl</span> -sL https://rpm.nodesource.com/setup_<span class="op">&lt;</span>NODE_VERSION<span class="op">&gt;</span>.x <span class="kw">|</span> <span class="fu">sudo</span> bash -</a></code></pre></div>
+<p>To install the v14 LTS</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># As root</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="ex">curl</span> -sL https://rpm.nodesource.com/setup_14.x <span class="kw">|</span> <span class="fu">bash</span> -</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co"># No root privileges</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="ex">curl</span> -sL https://rpm.nodesource.com/setup_14.x <span class="kw">|</span> <span class="fu">sudo</span> bash -</a></code></pre></div>
+<p>Once installed, you can check if it works by running:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">node</span> -v</a></code></pre></div>
+<h2 id="with-node-installer-windowsmac">With node installer (Windows/Mac)</h2>
+<p>You can install node with the <a href="https://nodejs.org/en/">official installers</a>. With this method you cannot specify or control which version of node will be installed. This will not be a problem with Flowbuild, but some projects may rely on deprecated features of LTS node versions.</p>
+<p>Just download and run the installer for Windows or macOS.</p>
+<p>After installed, you can check the current version with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">node</span> -v</a></code></pre></div>
+</body>
+</html>
