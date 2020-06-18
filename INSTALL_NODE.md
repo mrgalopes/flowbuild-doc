@@ -1,6 +1,10 @@
 # Installation methods for NodeJS
 
-#### With node version manager (recommended)
+- [With node version manager (recommended)](#with-node-version-manager-recommended)
+- [With package manager (Linux)](#with-package-manager-linux)
+- [With node installer (Windows/Mac)](#with-node-installer-windowsmac)
+
+## With node version manager (recommended)
 
 There are multiple ways to install node. On macOS and Linux, the recommended way
 is using `nvm` (node version manager). [Click here](https://github.com/nvm-sh/nvm) for official page. On Windows, you can run `nvm` using WSL (Windows Subsystem for Linux) or natively with the unofficial [nvm-windows](https://github.com/coreybutler/nvm-windows).

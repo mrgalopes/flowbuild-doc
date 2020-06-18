@@ -45,7 +45,7 @@ communication.
 There are multiple ways to install node. On macOS and Linux, the recommended way
 is using `nvm` (node version manager). [Click here](https://github.com/nvm-sh/nvm) for official page. On Windows, you can run `nvm` using WSL (Windows Subsystem for Linux) or natively with the unofficial [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
-For alternative options, check [Installing node](./INSTALL_NODE.md)
+For alternative options, check [Installing node](INSTALL_NODE.html)
 
 To install nvm, run the command below replacing the <NVM_VERSION> with the desired version of nvm. The newer, the better.
 
