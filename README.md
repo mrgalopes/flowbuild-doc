@@ -6,5 +6,5 @@ This is a draft for a documentation for the flowbuild components, including:
 - Cockpit
 - Workflow
 
-[Getting started](GETTING_STARTED.html)
+[Getting started](GETTING_STARTED.html)  
 [GitHub link](https://github.com/mrgalopes/flowbuild-doc)
