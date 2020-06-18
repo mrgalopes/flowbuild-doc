@@ -1,11 +1,7 @@
 #!/bin/bash
-# pre-push hook to make sure generated files match the source files
-#
-# To enable, run the command
-# git config --local core.hooksPath ./.githooks
 #
 
-make deploy
+make html
 
 last_rev="$(git log --pretty="%h" --no-merges -1)"
 

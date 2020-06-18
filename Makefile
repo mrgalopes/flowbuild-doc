@@ -19,7 +19,9 @@ ASSETS := $(addprefix $(STATIC_PATH), $(IMAGES_PATH) $(CSS_PATH))
 
 all: $(HTML_FILES) start_server
 
-deploy: $(HTML_FILES)
+.PHONY: clean start_server all html
+
+html: $(HTML_FILES)
 
 start_server:
 	cp ./index.html $(STATIC_PATH)
@@ -31,8 +33,6 @@ $(STATIC_PATH)%.html: %.md style.h.html | $(FOLDERS) $(ASSETS)
 $(ASSETS):
 	cp -r $(IMAGES_PATH) $(STATIC_PATH)
 	cp -r $(CSS_PATH) $(STATIC_PATH)
-
-.PHONY: post.pdf post.html
 
 clean:
 	rm -rf $(STATIC_PATH)
