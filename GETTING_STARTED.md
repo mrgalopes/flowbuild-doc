@@ -128,7 +128,7 @@ npm install @flowbuild/engine
 
 The basic anatomy of a workflow project is:
 
-```js
+<!-- ```js
 /* 0. Dependencies import */
 const readlineSync = require("readline-sync");
 const lisp = require("../src/core/lisp");
@@ -152,7 +152,9 @@ run_example()
     .then( resp => {console.log(resp)}) /* Show the result */
     .catch( err => {console.log(err)})  /* Catch any errors */
 
-```
+``` -->
+<script src="http://gist-it.appspot.com/https://github.com/mrgalopes/flowbuild-doc/blob/master/examples/anatomy_workflow.js">
+</script>
 
 ## Sharpen your skills
 
