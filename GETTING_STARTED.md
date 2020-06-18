@@ -31,7 +31,9 @@ communication.
 
 ## Install Flowbuild (Quick Install Guide)
 
-## Install node
+### Install node
+
+#### With node version manager (recommended)
 
 There are multiple ways to install node. On macOS and Linux, the recommended way
 is using `nvm` ([Click here for official page](https://github.com/nvm-sh/nvm)
@@ -43,9 +45,15 @@ Once installed, you can check if it works by running:
 node -v
 ```
 
-## Setup Docker
+### Setup Docker
 
-## Clone the repo
+### Clone the repo
+### Run the tests
 
-## Run the tests
+## Write your first Workflow
 
+## Sharpen your skills
+
+## Join the community
+
+## Intro to Workflow
