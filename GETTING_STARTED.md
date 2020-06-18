@@ -75,7 +75,7 @@ node -v
 
 ### Setup Docker
 
-All Flowbuild projects are shippend within a docker image to provide a smooth integration along different enviroments. To install the latest docker version, visit the page [get docker](https://docs.docker.com/get-docker/).
+All Flowbuild projects are shipped within a docker image to provide a smooth integration along different enviroments. To install the latest docker version, visit the [get docker](https://docs.docker.com/get-docker/) page.
 
 ### Clone the repo
 
