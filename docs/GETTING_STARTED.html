@@ -1,78 +1,47 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>GETTING_STARTED</title>
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link rel="stylesheet" href="https://unpkg.com/modesto@latest/modesto.min.css">
   <link rel="stylesheet" href="./css/images.css"/>
@@ -83,19 +52,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This file structure is based on Django docs</p>
 <ul>
 <li><a href="#sections">Sections</a></li>
-<li><a href="#why-flowbuild">Why Flowbuild?</a>
-<ul>
+<li><a href="#why-flowbuild">Why Flowbuild?</a></li>
 <li><a href="#reproducible">Reproducible</a></li>
 <li><a href="#independent">Independent</a></li>
 <li><a href="#easy-to-explain-and-to-reason-about">Easy to explain and to reason about</a></li>
-</ul></li>
-<li><a href="#install-flowbuild-quick-install-guide">Install Flowbuild (Quick Install Guide)</a>
-<ul>
+<li><a href="#install-flowbuild-quick-install-guide">Install Flowbuild (Quick Install Guide)</a></li>
 <li><a href="#install-node">Install node</a></li>
 <li><a href="#setup-docker">Setup Docker</a></li>
 <li><a href="#clone-the-repo">Clone the repo</a></li>
 <li><a href="#run-the-tests">Run the tests</a></li>
-</ul></li>
 <li><a href="#write-your-first-workflow">Write your first Workflow</a></li>
 <li><a href="#sharpen-your-skills">Sharpen your skills</a></li>
 <li><a href="#join-the-community">Join the community</a></li>
@@ -114,66 +79,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are multiple ways to install node. On macOS and Linux, the recommended way is using <code>nvm</code> (node version manager). <a href="https://github.com/nvm-sh/nvm">Click here</a> for official page. On Windows, you can run <code>nvm</code> using WSL (Windows Subsystem for Linux) or natively with the unofficial <a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>.</p>
 <p>For alternative options, check <a href="INSTALL_NODE.html">Installing node</a></p>
 <p>To install nvm, run the command below replacing the <NVM_VERSION> with the desired version of nvm. The newer, the better.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/<span class="op">&lt;</span>NVM_VERSION<span class="op">&gt;</span>/install.sh <span class="kw">|</span> <span class="fu">bash</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/<span class="op">&lt;</span>NVM_VERSION<span class="op">&gt;</span>/install.sh <span class="kw">|</span> <span class="fu">bash</span></code></pre></div>
 <p>By the time this document was written, the newer version of nvm was v0.35.3</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh <span class="kw">|</span> <span class="fu">bash</span></code></pre></div>
 <p>To install the lastest LTS (Long Time Sevice) version, run the command:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">nvm</span> install --lts</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">nvm</span> install --lts</code></pre></div>
 <p>If you get an error <code>Command 'nvm' not found</code> try to close and reopen the terminal session.</p>
 <p>You can check your instalation with:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">node</span> -v</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">node</span> -v</code></pre></div>
 <h3 id="setup-docker">Setup Docker</h3>
 <p>All Flowbuild projects are shipped within a docker image to provide a smooth integration along different enviroments. To install the latest docker version, visit the <a href="https://docs.docker.com/get-docker/">get docker</a> page.</p>
 <h3 id="clone-the-repo">Clone the repo</h3>
 <p>To start a project, clone the latest stable version of Flowbuild engine from the <a href="https://github.com/flow-build/engine">official repo</a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">git</span> clone https://github.com/flow-build/engine</a></code></pre></div>
-<p>If you don’t have <code>git</code> in your system, you can install with</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">sudo</span> apt install git <span class="co"># Debian/Ubuntu systems</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="fu">sudo</span> yum install git <span class="co"># Red Hat/Fedora systems</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/flow-build/engine</code></pre></div>
+<p>If you don't have <code>git</code> in your system, you can install with</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sudo</span> apt install git <span class="co"># Debian/Ubuntu systems</span>
+<span class="fu">sudo</span> yum install git <span class="co"># Red Hat/Fedora systems</span></code></pre></div>
 <p>Or download the installer from the <a href="https://git-scm.com/downloads">official page</a></p>
 <h3 id="run-the-tests">Run the tests</h3>
 <p>To check if the library is working, you may run the unit tests.</p>
 <p>To setup the docker enviroment and run the tests, use the commands</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">docker-compose</span> build</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="ex">docker-compose</span> up</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">docker-compose</span> build
+<span class="ex">docker-compose</span> up</code></pre></div>
 <h2 id="write-your-first-workflow">Write your first Workflow</h2>
 <p>To start a new project with Workflow, you first need to create a new node project.</p>
 <p>Lets create a project named <code>my-first-workflow</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">mkdir</span> my-first-workflow</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="bu">cd</span> my-first-workflow</a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="ex">npm</span> init -y</a></code></pre></div>
-<p>A new file named <code>package.json</code> will be created inside the folder, showing that the folder contains a node module.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> my-first-workflow
+<span class="bu">cd</span> my-first-workflow
+
+<span class="ex">npm</span> init -y</code></pre></div>
+<p>A new file named <code>package.json</code> will be created inside the folder, showing that the folder contains a node project.</p>
 <p>Then, we must install our workflow engine as a dependency</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">npm</span> install @flowbuild/engine</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">npm</span> install @flowbuild/engine</code></pre></div>
+<p>Now, we are ready to start our project. Create a file named <code>index.js</code> on the root of the project. We will start our workflow there</p>
 <p>The basic anatomy of a workflow project is:</p>
-<!-- ```js
-/* 0. Dependencies import */
-const readlineSync = require("readline-sync");
-const lisp = require("../src/core/lisp");
-const settings = require("../settings/settings");
-const { Engine } = require("../src/engine/engine");
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="co">/* 0. Dependencies import */</span>
+<span class="kw">const</span> readlineSync <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;readline-sync&quot;</span>)<span class="op">;</span>
+<span class="kw">const</span> <span class="op">{</span> Engine <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;@flowbuild/engine&quot;</span>)<span class="op">;</span>
 
-/* 1. Declaration of the blueprint */
-const blueprint_spec = {};
+<span class="co">/* 1. Declaration of the blueprint */</span>
+<span class="kw">const</span> blueprint_spec <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">requirements</span><span class="op">:</span> []<span class="op">,</span>
+    <span class="dt">prepare</span><span class="op">:</span> []<span class="op">,</span>
+    <span class="dt">nodes</span><span class="op">:</span> []<span class="op">,</span>
+    <span class="dt">lanes</span><span class="op">:</span> []<span class="op">,</span>
+    <span class="dt">environment</span><span class="op">:</span> <span class="op">{},</span>
+<span class="op">};</span>
 
-/* 2. Declaration of the actors of the workflow */
-const actor_data = {
-    id: "1",
-    claims: []
-};
+<span class="co">/* 2. Declaration of the actors of the workflow */</span>
+<span class="kw">const</span> actor_data <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;1&quot;</span><span class="op">,</span>
+    <span class="dt">claims</span><span class="op">:</span> []
+<span class="op">};</span>
 
-/* 3. Declaration of async func to run the workflow */
-const run_example = async() => {};
+<span class="co">/* 3. Declaration of async func to run the workflow */</span>
+<span class="kw">const</span> run_example <span class="op">=</span> <span class="at">async</span>() <span class="op">=&gt;</span> <span class="op">{};</span>
 
-/* 4. Run the function */
-run_example()
-    .then( resp => {console.log(resp)}) /* Show the result */
-    .catch( err => {console.log(err)})  /* Catch any errors */
-
-``` -->
-<script src="http://gist-it.appspot.com/https://github.com/mrgalopes/flowbuild-doc/blob/master/examples/anatomy_workflow.js">
-</script>
+<span class="co">/* 4. Run the function */</span>
+<span class="at">run_example</span>()
+    .<span class="at">then</span>( resp <span class="op">=&gt;</span> <span class="op">{</span><span class="va">console</span>.<span class="at">log</span>(resp)<span class="op">}</span>) <span class="co">/* Show the result */</span>
+    .<span class="at">catch</span>( err <span class="op">=&gt;</span> <span class="op">{</span><span class="va">console</span>.<span class="at">log</span>(err)<span class="op">}</span>)  <span class="co">/* Catch any errors */</span></code></pre></div>
+<p>Here, we have the main components of the project, the <strong>blueprint specification</strong> and the <strong>actor data</strong>.</p>
+<p>A <strong>blueprint</strong> is an JS object that represents the structure of the process in terms of <strong>nodes</strong>. A <strong>node</strong> is the minimal unit of a process.</p>
+<p>It is a 1:1 representation of a BPMN diagram.</p>
 <h2 id="sharpen-your-skills">Sharpen your skills</h2>
 <p>You can find several exemples of different workflows under the ./examples folder in the repo (TODO: Explicar os exemplos disponíveis)</p>
 <h2 id="join-the-community">Join the community</h2>
