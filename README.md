@@ -8,3 +8,4 @@ This is a draft for a documentation for the flowbuild components, including:
 
 [Getting started](GETTING_STARTED.html)  
 [GitHub link](https://github.com/mrgalopes/flowbuild-doc)
+[Workflow Concepts](CONCEPTS.md)
