@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/modesto@latest/modesto.min.css">
+  <link rel="stylesheet" href="./css/images.css"/>
+</head>
+<body>
+<h1 id="workflow-concepts">Workflow Concepts</h1>
+<p>There are some concepts and definitions associated with workflow that are fundamental to understand. These will make the learning process smoother.</p>
+<p>Such concepts are: - Nodes - Bag - Blueprint - References and Lisp</p>
+<h1 id="bag">Bag</h1>
+<p>After a node is run, its result can only be accessed by the next one, using <code>&quot;$ref&quot;: &quot;result.value&quot;</code>, changing value for the right property. If you need to keep information for later, a bag is used. It stores data until the end of the current process, and only for it.</p>
+<p>To use it, write a <code>SystemTask</code> node:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">{</span>
+  <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;3&quot;</span><span class="op">,</span>
+  <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;SystemTask&quot;</span><span class="op">,</span>
+  <span class="dt">category</span><span class="op">:</span> <span class="st">&quot;SetToBag&quot;</span><span class="op">,</span>
+  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Set values on bag&quot;</span><span class="op">,</span>
+  <span class="dt">next</span><span class="op">:</span> <span class="st">&quot;4&quot;</span><span class="op">,</span>
+  <span class="dt">lane_id</span><span class="op">:</span> <span class="st">&quot;1&quot;</span><span class="op">,</span>
+  <span class="dt">parameters</span><span class="op">:</span> <span class="op">{</span>
+    <span class="dt">input</span><span class="op">:</span> <span class="op">{</span>
+      <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;John&quot;</span>
+      <span class="dt">value</span><span class="op">:</span> <span class="op">{</span><span class="st">&quot;$ref&quot;</span><span class="op">:</span> <span class="st">&quot;result.value&quot;</span><span class="op">}</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+<span class="op">},</span></code></pre></div>
+<p>This will add or update the bag. After this node runs, the bag will contain a key called <code>name</code> with a value called <code>&quot;John&quot;</code> and a key called <code>value</code> containing the result from the previous node.</p>
+<p>To access the values in the bag, you can use references. For instance, <code>&quot;$ref&quot;: &quot;bag.name&quot;</code> will retrieve the value from the bag with the key of <code>name</code>.</p>
+</body>
+</html>
