@@ -118,7 +118,7 @@ cd my-first-workflow
 npm init -y
 ```
 
-A new file named ```package.json``` will be created inside the folder, showing that the folder contains a node module.
+A new file named ```package.json``` will be created inside the folder, showing that the folder contains a node project.
 
 Then, we must install our workflow engine as a dependency
 
@@ -126,17 +126,23 @@ Then, we must install our workflow engine as a dependency
 npm install @flowbuild/engine
 ```
 
+Now, we are ready to start our project. Create a file named ```index.js``` on the root of the project. We will start our workflow there
+
 The basic anatomy of a workflow project is:
 
-<!-- ```js
+```js
 /* 0. Dependencies import */
 const readlineSync = require("readline-sync");
-const lisp = require("../src/core/lisp");
-const settings = require("../settings/settings");
-const { Engine } = require("../src/engine/engine");
+const { Engine } = require("@flowbuild/engine");
 
 /* 1. Declaration of the blueprint */
-const blueprint_spec = {};
+const blueprint_spec = {
+    requirements: [],
+    prepare: [],
+    nodes: [],
+    lanes: [],
+    environment: {},
+};
 
 /* 2. Declaration of the actors of the workflow */
 const actor_data = {
@@ -152,9 +158,13 @@ run_example()
     .then( resp => {console.log(resp)}) /* Show the result */
     .catch( err => {console.log(err)})  /* Catch any errors */
 
-``` -->
-<script src="http://gist-it.appspot.com/https://github.com/mrgalopes/flowbuild-doc/blob/master/examples/anatomy_workflow.js">
-</script>
+```
+
+Here, we have the main components of the project, the **blueprint specification** and the **actor data**.
+
+A **blueprint** is an JS object that represents the structure of the process in terms of **nodes**. A **node** is the minimal unit of a process.
+
+It is a 1:1 representation of a BPMN diagram.
 
 ## Sharpen your skills
 
