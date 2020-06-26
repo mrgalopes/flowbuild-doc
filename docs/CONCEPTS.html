@@ -49,7 +49,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <h1 id="workflow-concepts">Workflow Concepts</h1>
 <p>There are some concepts and definitions associated with workflow that are fundamental to understand. These will make the learning process smoother.</p>
-<p>Such concepts are: - Nodes - Bag - Blueprint - References and Lisp</p>
+<p>Such concepts are: - Nodes - Activity Managers - Actor - Bag - Blueprint - References and Lisp</p>
 <h1 id="bag">Bag</h1>
 <p>After a node is run, its result can only be accessed by the next one, using <code>&quot;$ref&quot;: &quot;result.value&quot;</code>, changing value for the right property. If you need to keep information for later, a bag is used. It stores data until the end of the current process, and only for it.</p>
 <p>To use it, write a <code>SystemTask</code> node:</p>
@@ -69,5 +69,57 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">},</span></code></pre></div>
 <p>This will add or update the bag. After this node runs, the bag will contain a key called <code>name</code> with a value called <code>&quot;John&quot;</code> and a key called <code>value</code> containing the result from the previous node.</p>
 <p>To access the values in the bag, you can use references. For instance, <code>&quot;$ref&quot;: &quot;bag.name&quot;</code> will retrieve the value from the bag with the key of <code>name</code>.</p>
+<h1 id="activity-managers">Activity Managers</h1>
+<p>TODO</p>
+<h1 id="actors">Actors</h1>
+<p>TODO</p>
+<h1 id="blueprint">Blueprint</h1>
+<p>A blueprint is a JavaScript object that represents the structure of the process. It contains all the nodes that the process requires, not necessarily in order. Also, it contains other properties that help to describe the process, including: - Requirements - Prepare - Lanes - Environment</p>
+<p>The basic structure of a blueprint specification is:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">const</span> blueprint_spec <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">requirements</span><span class="op">:</span> []<span class="op">,</span>
+  <span class="dt">prepare</span><span class="op">:</span> []<span class="op">,</span>
+  <span class="dt">nodes</span><span class="op">:</span> [
+    <span class="co">// list of nodes...</span>
+  ]<span class="op">,</span>
+  <span class="dt">lanes</span><span class="op">:</span> [
+    <span class="co">// list of lanes...</span>
+  ]<span class="op">,</span>
+  <span class="dt">environment</span><span class="op">:</span> <span class="op">{},</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="requirements">Requirements</h2>
+<p>It's possible to declare dependencies to be used in nodes. For example, the <code>core</code> requirement provides functions that can be called in the Lisp environment.</p>
+<h2 id="prepare">Prepare</h2>
+<p>TODO</p>
+<h2 id="lanes">Lanes</h2>
+<p>Lanes defines which type of actor can access certain nodes. For instance, if a node can only be reached by a &quot;manager&quot;, there would be a manager lane with an id, and the node would have this <code>lane_id</code>. This is called a <em>claim</em>. An example of this is shown as:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">const</span> blueprint_spec <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">requirements</span><span class="op">:</span> []<span class="op">,</span>
+  <span class="dt">prepare</span><span class="op">:</span> []<span class="op">,</span>
+  <span class="dt">nodes</span><span class="op">:</span> [
+    <span class="co">// other nodes...</span>
+    <span class="op">{</span>
+      <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;9&quot;</span><span class="op">,</span>
+      <span class="co">// ...other informations</span>
+      <span class="dt">lane_id</span><span class="op">:</span> <span class="st">&quot;5&quot;</span>
+    <span class="op">}</span>
+  ]<span class="op">,</span>
+  <span class="dt">lanes</span><span class="op">:</span> [
+    <span class="co">// other lanes</span>
+    <span class="op">{</span>
+      <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;5&quot;</span><span class="op">,</span>
+      <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;manager&quot;</span><span class="op">,</span>
+      <span class="dt">rule</span><span class="op">:</span> <span class="va">lisp</span>.<span class="at">validate_claim</span>(<span class="st">&quot;manager&quot;</span>) <span class="co">// </span><span class="al">TODO</span><span class="co"> check lisp</span>
+    <span class="op">}</span>
+  ]<span class="op">,</span>
+  <span class="dt">environment</span><span class="op">:</span> <span class="op">{},</span>
+<span class="op">};</span></code></pre></div>
+<p>As such, any actor that tries to access this node would have to have a manager claim:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">const</span> manager_data <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">id</span><span class="op">:</span> <span class="st">&quot;2&quot;</span><span class="op">,</span>
+  <span class="dt">claims</span><span class="op">:</span> [<span class="st">&quot;manager&quot;</span>] <span class="co">// Can have other claims too!</span>
+<span class="op">};</span></code></pre></div>
+<h2 id="environment">Environment</h2>
+<p>TODO</p>
 </body>
 </html>
