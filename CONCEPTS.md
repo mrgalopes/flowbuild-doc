@@ -5,6 +5,8 @@ fundamental to understand. These will make the learning process smoother.
 
 Such concepts are:
 - Nodes
+- Activity Managers
+- Actor
 - Bag
 - Blueprint
 - References and Lisp
@@ -43,6 +45,12 @@ containing the result from the previous node.
 To access the values in the bag, you can use references. For instance,
 `"$ref": "bag.name"` will retrieve the value from the bag with the key of 
 `name`.
+
+# Activity Managers
+TODO
+
+# Actors
+TODO
 
 # Blueprint
 
