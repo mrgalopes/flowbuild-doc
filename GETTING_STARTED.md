@@ -170,6 +170,12 @@ It is a 1:1 representation of a BPMN diagram.
 
 You can find several exemples of different workflows under the ./examples folder in the repo (TODO: Explicar os exemplos disponíveis)
 
+A repl.it with some more examples can be found
+[here.](https://repl.it/@mrgalopes/HelloWorkflow#index.js)
+
+Also, for a more in-depth explanation for the concepts on which the flowbuild
+Engine is built, click [here.](CONCEPTS.html)
+
 ## Join the community
 
 ## Intro to Workflow
