@@ -44,3 +44,80 @@ To access the values in the bag, you can use references. For instance,
 `"$ref": "bag.name"` will retrieve the value from the bag with the key of 
 `name`.
 
+# Blueprint
+
+A blueprint is a JavaScript object that represents the structure of the 
+process. It contains all the nodes that the process requires, not necessarily
+in order. Also, it contains other properties that help to describe the process,
+including:
+- Requirements
+- Prepare
+- Lanes
+- Environment
+
+The basic structure of a blueprint specification is:
+
+``` js
+const blueprint_spec = {
+  requirements: [],
+  prepare: [],
+  nodes: [
+    // list of nodes...
+  ],
+  lanes: [
+    // list of lanes...
+  ],
+  environment: {},
+}
+```
+
+## Requirements
+It's possible to declare dependencies to be used in nodes. For example, the
+`core` requirement provides functions that can be called in the Lisp 
+environment.
+
+## Prepare
+TODO
+
+## Lanes
+Lanes defines which type of actor can access certain nodes. For instance, if a
+node can only be reached by a "manager", there would be a manager lane with an
+id, and the node would have this `lane_id`. This is called a *claim*. An example
+of this is shown as:
+
+``` js
+const blueprint_spec = {
+  requirements: [],
+  prepare: [],
+  nodes: [
+    // other nodes...
+    {
+      id: "9",
+      // ...other informations
+      lane_id: "5"
+    }
+  ],
+  lanes: [
+    // other lanes
+    {
+      id: "5",
+      name: "manager",
+      rule: lisp.validate_claim("manager") // TODO check lisp
+    }
+  ],
+  environment: {},
+};
+```
+
+As such, any actor that tries to access this node would have to have a manager
+claim:
+
+``` js
+const manager_data = {
+  id: "2",
+  claims: ["manager"] // Can have other claims too!
+};
+```
+
+## Environment
+TODO
